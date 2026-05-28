@@ -17,3 +17,4 @@ backend/**/__pycache__/
 .vs/
 artifacts/
 frontend.backup-*/
+前端/

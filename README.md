@@ -40,11 +40,11 @@
 
 ## 2026-05-28 前端视觉整合进度
 
-- Step 1 已完成：合并 `./前端/src/index.css` 的 Tailwind CSS v4 主题 token，并接入新版 `AshParticles` 粒子算法。
+- Step 1 已完成：合并黑金紫仪式风格的 Tailwind CSS v4 主题 token，并接入新版 `AshParticles` 粒子算法。
 - Step 2 已完成：主界面只重构“开启封锁剧院”创建卡片/按钮视觉，真实创建/加入房间逻辑保持不变。
-- Step 3 已完成：`LobbyPage` / `RolePanel` 已按 `./前端` 选角长廊风格重构，7 个头像槽来自后端真实 `room.story.roles`，角色占用、锁定、当前高亮、选择按钮和“开启第一章”仍绑定原有状态与回调。
+- Step 3 已完成：`LobbyPage` / `RolePanel` 已按选角长廊风格重构，7 个头像槽来自后端真实 `room.story.roles`，角色占用、锁定、当前高亮、选择按钮和“开启第一章”仍绑定原有状态与回调。
 - Step 3 修正：角色头像改为镜框内全幅裁切填充，背景图层降到头像后方，底部卷宗信息压缩为完整可见摘要，避免 720p 高度下文字被截断。
-- Step 4 已完成：`GamePage` 已接入 `./前端` 风格的“剧情事件台”和底部指令输入框，事件台读取真实 `room.public_log`，发言/行动/私密按钮继续调用原有 WebSocket `send(type, text)`。
+- Step 4 已完成：`GamePage` 已接入黑金紫仪式风格的“剧情事件台”和底部指令输入框，事件台读取真实 `room.public_log`，发言/行动/私密按钮继续调用原有 WebSocket `send(type, text)`。
 - 剧本角色增强：7 个角色的初始线索扩展为每人 5 条，关系扩展为每人 5 条，并新增每人 4 条压力点；本人角色卡现在会显示关系和软肋。
 - 已验证：`npm run build` 通过；浏览器创建房间进入选角页后，左右箭头可切换真实角色，点击“选择这个角色”后开始按钮从禁用变可用。
 - Step 4 验证：本地启动 `frontend:5173` 与 `backend:8000` 后，从新指令台发送公开行动，按钮显示“GM裁定中...”，随后 WebSocket 推回 GM 叙事、NPC 回应和事件，剧情事件台从 2 Logs 增至 8 Logs。
@@ -195,12 +195,12 @@ npm run preview
 - 已修复中途卡死：AI 返回 `visibility=private` 时会规范化为 `secret`，单条 WebSocket 消息异常不会断开连接。
 - 已修复进度越界：`investigation_progress`、`alert_level` 等 0-5 状态在写入和公开前统一封顶。
 - 游戏界面玩家列表下方已加入推荐行动面板，点击建议会提交行动并在后续剧情结算后实时刷新。
-- 选角页和游戏页已参考 `./前端` 示例迁移为黑金紫仪式风格；主界面保留原版视觉。
+- 选角页和游戏页已迁移为黑金紫仪式风格；主界面保留原版视觉。
 - 选角页角色长廊为 7 个固定头像槽，当前聚焦角色高亮，左右切换按钮位于“角色长廊”标题两侧。
 - 选角页底部控制台为固定一行三列，无整页右侧滚动条和玩家列表内部滚动条。
 - 前端已切换到 Tailwind CSS v4 Vite 插件管线：`@tailwindcss/vite` + `@import "tailwindcss"`。
 - 选角页底部信息区已用 Tailwind v4 utilities 重排为房间状态、当前角色卷宗、开始行动三栏。
-- 新视觉整合已完成 Step 1：合并 `./前端` 的 Tailwind v4 主题 token，并接入新版 AshParticles 粒子算法。
+- 新视觉整合已完成 Step 1：合并 Tailwind v4 主题 token，并接入新版 AshParticles 粒子算法。
 - 新视觉整合已完成 Step 2：主界面仅“开启封锁剧院”创建卡片改为新视觉按钮样式，真实创建房间逻辑不变。
 - 本次前端大改前已备份：`frontend.backup-20260527-222806`。
 
